@@ -1,0 +1,24 @@
+<nb-card size="large">
+
+    <nb-card-header>Pi Master</nb-card-header>
+    <nb-card-body>
+        <div class="slider-container">
+            <ngx-volume-dragger [(value)]="volume" (power)="volumeOff = !$event"
+                                     [min]="0" [max]="100" [disableArcColor]="colors.layoutBg"
+                                     [fillColors]="colors.volume">
+    
+              <div class="slider-value-container"  [ngClass]="{ 'off': volumeOff }">
+                <div class="value volume">
+                  {{ volumeOff ? '--' : (volume | ngxRound) }}
+                </div>
+                <div class="desc">
+                  Audio
+                </div>
+              </div>
+            </ngx-volume-dragger>
+          </div>
+
+    </nb-card-body>
+</nb-card>
+
+    
